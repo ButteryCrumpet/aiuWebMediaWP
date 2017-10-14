@@ -1,12 +1,11 @@
 <?php
 
-function remove_metaboxes() {
+function remove_studyabroad_metaboxes() {
 	remove_meta_box('locationdiv', 'study_abroad', 'normal');
 }
 
-function add_metaboxes() {
+function add_studyabroad_metaboxes() {
     add_meta_box('location-div', 'Locations', 'render_location_select', 'study_abroad', 'side', 'high');
-    add_meta_box('timetable-div', 'Timetable', 'render_timetable_metabox', 'timetable', 'normal');
 }
 
 //refactor jesus fucking christ
@@ -90,51 +89,5 @@ function render_cat_option($tax, $terms, $current) {
     }
 }
 
-//add holiday timetables?
-function render_timetable_metabox( $post ) {
-
-    $vals = get_post_meta($post->ID, 'ttable-times-meta');
-    $vals = $vals[0];
-    print_r($vals);
-
-    $inputs = '<div id="ttable-times">';
-    $inputs .= '<h4>Times:</h4>';
-    $class = 'first-ttable-input';
-    foreach ($vals as $time){
-        $inputs .= '<div class="' . $class . '"><input name="ttable-times-meta[]" type="text" placeholder="HH:MM" value='. $time . '><br></div>';
-        $class = 'ttable-input';
-    }
-    $inputs .= '</div>';
-    $inputs .= '<a style="cursor: pointer;" id="ttable-addtime" > + Add Time</a>';
-    $inputs .= '<a style="cursor: pointer;" id="ttable-removetime" > - Remove Time</a>';
-
-    echo $inputs;
-}
-
-function save_timetable_meta( $post_id, $post ) {
-
-    if ( ! isset( $_POST['ttable-times-meta'])) {
-        return $post_id;
-    }
-
-    $meta_key = 'ttable-times-meta';
-    $meta_value = get_post_meta( $post_id, $meta_key, true );
-    $new_meta_value = ( isset( $_POST['ttable-times-meta'] ) ? sanitize_html_class( $_POST['ttable-times-meta'] ) : '' );
-
-    //check if time format($new_meta_value);
-
-    if ( $new_meta_value && array() == $meta_value )
-        add_post_meta( $post_id, $meta_key, $new_meta_value, true );
-
-    // If the new meta value does not match the old value, update it.
-    elseif ( $new_meta_value && $new_meta_value != $meta_value )
-        update_post_meta( $post_id, $meta_key, $new_meta_value );
-
-    // If there is no new meta value but an old value exists, delete it.
-     elseif ( array() == $new_meta_value && $meta_value )
-        delete_post_meta( $post_id, $meta_key, $meta_value );
-}
-
-add_action('admin_menu', 'remove_metaboxes');
-add_action('add_meta_boxes', 'add_metaboxes');
-add_action('save_post', 'save_timetable_meta', 10, 2);
+add_action('admin_menu', 'remove_studyabroad_metaboxes');
+add_action('add_meta_boxes', 'add_studyabroad_metaboxes');

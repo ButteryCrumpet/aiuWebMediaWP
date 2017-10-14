@@ -28,6 +28,9 @@ function timetables_init() {
     $args = array(
       'label' => 'Timetables',
         'public' => true,
+        'exlude_from_search' => true,
+        'publicly_queryable' => false,
+        'show_in_nav_menus' => false,
         'show_ui' => true,
         'capability_type' => 'post',
         'hierarchical' => false,
@@ -46,3 +49,20 @@ function timetables_init() {
     register_post_type( 'timetable', $args );
 }
 add_action( 'init', 'timetables_init' );
+
+function special_dates_init() {
+    $args = array(
+        'label' => 'Special Dates',
+        'public' => false,
+        'show_ui' => true,
+        'show_in_menu' => 'edit.php?post_type=timetable',
+        'capability_type' => 'post',
+        'heirarchical' => false,
+        'menu_position' => 9,
+        'supports' => array( 'title' )
+    );
+
+    register_post_type( 'special_dates', $args );
+}
+
+add_action( 'init', 'special_dates_init' );

@@ -1,9 +1,57 @@
+body {
+    box-sizing: border-box;
+}
+
+
 #awm-header {
     height: 20px;
     border: 1px solid black;
     margin: 5px;
 }
 
-#ttable-addtime {
-    cursor: pointer;
+#awm-header {
+    height: 100px;
+}
+
+#sidebar {
+    vertical-align: top;
+    display: inline-block;
+    width: 20%;
+    border: 1px solid black;
+    min-height: 100%;
+}
+
+#main {
+    vertical-align: top;
+    display: inline-block;
+    width: 70%;
+    border: 1px solid black;
+    min-height: 100%;
+    padding: 20px;
+}
+
+#bus {
+    height: 30%;
+    border-bottom: 1px solid black;
+}
+
+.a-list-thumb {
+    height: 280px;
+    width: 400px;
+    display: inline-block;
+}
+
+.a-list-thumb > img {
+    height: 100%;
+    width: 100%;
+}
+
+.a-list-content {
+    vertical-align: top;
+    display: inline-block;
+}
+
+.catlink {
+    display: inline-block;
+    margin-left: 5px;
 }

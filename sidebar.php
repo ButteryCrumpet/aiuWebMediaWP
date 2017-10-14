@@ -1,6 +1,6 @@
 <div id="bus">
-    BUS
+    BUS -timetables
 </div>
 <div id="filters">
-    Cat/tag filters
+    <?php wp_list_categories( array( 'title_li' => '' )) ?>
 </div>
