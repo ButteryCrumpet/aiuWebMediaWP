@@ -9,6 +9,12 @@ include 'functions/admin-specialdates.php';
 //styles
 function akiWebMedia_style_scripts() {
 	wp_enqueue_style( 'core', get_stylesheet_uri(), false );
+	wp_enqueue_style( 'froala', get_template_directory_uri() . '/css/froala_blocks.css', false );
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', false );
+	wp_enqueue_style( 'iconic', get_template_directory_uri() . '/css/open-iconic-bootstrap.css', false );
+	
+	wp_enqueue_script('jquery');
+	wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js');
 	wp_enqueue_script('adminJS', get_template_directory_uri() . '/js/admin.js');
 }
 
@@ -34,11 +40,11 @@ function render_terms_list($post_id) {
 	$terms = (get_the_terms($post_id, 'location')) ? get_the_terms($post_id, 'location') : array();
 	$all = $cats + $terms;
 
-	$html = '<ul class="catlinks">';
+
 	foreach($all as $term) {
-		$html .= '<a href="'. get_category_link($term->term_id) .'"  ><li class="catlink" >' . $term->name .'</li></a>';
+		$html .= '<a href="'. get_category_link($term->term_id) .'" class="badge badge-primary" >' . $term->name .'</a>';
 	}
-	$html .= '</ul>';
+
 
 	echo $html;
 }

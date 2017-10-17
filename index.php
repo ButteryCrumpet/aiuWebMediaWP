@@ -1,23 +1,35 @@
 <?php
 get_header();
 ?>
-<div id="mainBody">
-    <div id="sidebar"><?php include 'sidebar.php'; ?></div>
-    <div id="main">
+<div class="container">
+    <div class="row">
+    <div class="col-md-3 sidebar">
+        <?php include 'sidebar.php'; ?>
+    </div>
+    <div class="col-md-9">
     <?php if (have_posts()) :
         while ( have_posts() ) : the_post();
     ?>
-    <div class="article-list-item">
-        <a href="<?php echo the_permalink(); ?>" >
-            <div class='a-list-thumb' ><?php the_post_thumbnail('medium'); ?></div>
-            <div class="a-list-content">
-            <h4><?php the_title(); ?></h4>
-            <?php render_terms_list(get_the_ID()); ?>
-            <p><?php the_excerpt(); ?></p>
-        </a>
-        </div>
-    </div>
+        <section class="fdb-block awm-block">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-10 col-sm-6 col-md-4 col-lg-3 m-auto m-md-0">
+                    <a href="<?php echo get_the_permalink(); ?>">    
+                        <img alt="image" class="img-fluid" src="<?php echo get_the_post_thumbnail_url(); ?>">
+                    </a>    
+                </div>
+                    <div class="col-12 col-md-8 ml-auto pt-5 pt-md-0">
+                        <h2><?php the_title(); ?></h2>
+                        <p class="mt-4"><?php render_terms_list(get_the_ID()); ?></p>
+                        <p class="text-h3"><?php the_excerpt(); ?></p>
+                    </div>
+                </div>
+            </div>
+        </section>
     <?php endwhile; endif; ?>
     </div>
+    </div>
 </div>
-<div><?php get_footer(); ?></div>
+<div>
+    <?php get_footer(); ?>
+</div>

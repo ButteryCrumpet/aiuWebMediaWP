@@ -1,3 +1,11 @@
+-- do last -- 
 redo timetables somehow - rewrite JS
-wireframe frontend - flex everything
-shit needs a big cleanup
+
+-- styling --
+bootstrap and froala
+get index and single done
+filter children -- have to self write the list // not too hard maybe
+insert popper.js
+limit title length and size // enlarge pictures?
+menu options
+colours

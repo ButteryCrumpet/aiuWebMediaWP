@@ -1,9 +1,12 @@
 <?php
 get_header();
 ?>
-<div id="mainBody">
-    <div id="sidebar"><?php include 'sidebar.php'; ?></div>
-    <div id="main">
+<div class="container">
+    <div class="row">
+    <div class="col-md-3 sidebar">
+        <?php include 'sidebar.php'; ?>
+    </div>
+    <div class="col-md-9">
     <?php if (have_posts()) :
         while ( have_posts() ) : the_post();
         if ('study_abroad' === get_post_type(get_the_id())) {
@@ -19,4 +22,8 @@ get_header();
     </div>
     <?php endwhile; endif; ?>
     </div>
-<div><?php get_footer(); ?></div>
+    </div>
+</div>
+<div>
+    <?php get_footer(); ?>
+</div>

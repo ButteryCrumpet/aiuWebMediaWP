@@ -2,56 +2,45 @@ body {
     box-sizing: border-box;
 }
 
-
-#awm-header {
-    height: 20px;
-    border: 1px solid black;
-    margin: 5px;
+img {
+    max-width: 100%;
+    height: auto;
 }
 
-#awm-header {
-    height: 100px;
-}
-
-#sidebar {
-    vertical-align: top;
-    display: inline-block;
-    width: 20%;
-    border: 1px solid black;
-    min-height: 100%;
-}
-
-#main {
-    vertical-align: top;
-    display: inline-block;
-    width: 70%;
-    border: 1px solid black;
-    min-height: 100%;
-    padding: 20px;
+.content-main {
+    min-height: 100vh;
 }
 
 #bus {
-    height: 30%;
-    border-bottom: 1px solid black;
+    height: 200px;
 }
 
-.a-list-thumb {
-    height: 280px;
-    width: 400px;
+#filters ul {
+    list-style: none;
+}
+
+#filters ul > li {
+    padding: 10px;
+}
+
+#filters .children {
+    display: none;
+}
+
+.awm-block {
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    box-shadow: 0 -3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.caret-right {
+    border-bottom: 4px solid transparent;
+    border-top: 4px solid transparent;
+    border-left: 4px solid;
     display: inline-block;
-}
-
-.a-list-thumb > img {
-    height: 100%;
-    width: 100%;
-}
-
-.a-list-content {
+    height: 0;
+    opacity: 0.3;
     vertical-align: top;
-    display: inline-block;
-}
-
-.catlink {
-    display: inline-block;
-    margin-left: 5px;
+    width: 0;
 }
