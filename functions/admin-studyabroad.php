@@ -53,23 +53,26 @@ function render_location_select( $post ) {
     </script>
     <div id="taxonomy-<?php echo $taxonomy; ?>" class="categorydiv">
         <div id="<?php echo $taxonomy; ?>-all" class="tabs-panel">
-			<label>Region:
-            <select id="regionSelect" name="<?php echo $name; ?>">
+        <div class="input-group">
+			<span class="input-group-addon">Region:</span>
+            <select id="regionSelect" class="form-control" name="<?php echo $name; ?>">
             <?php render_cat_option($taxonomy, $topLevel, $current); ?>
             </select>
-            </label>
+        </div>
             <br>
-            <label>Country:
-            <select id="countrySelect" name="<?php echo $name; ?>">
+        <div class="input-group">
+        <span class="input-group-addon">Country:</span>
+            <select id="countrySelect" class="form-control" name="<?php echo $name; ?>">
             <?php render_cat_option($taxonomy, $initLevel2, $current); ?>
             </select>
-            </label>
+        </div>
             <br>
-            <label>University:
-            <select id="uniSelect" name="<?php echo $name; ?>">
+        <div class="input-group">
+        <span class="input-group-addon">University:</span>
+            <select id="uniSelect" class="form-control" name="<?php echo $name; ?>">
             <?php render_cat_option($taxonomy, $initLevel3, $current); ?>
             </select>
-            </label>
+        </div>
 		</div>
     </div>
 	

@@ -7,10 +7,10 @@
           <a class="nav-link active" href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/">Features</a>
+          <a class="nav-link" href="/">Articles</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/">Terms</a>
+          <a class="nav-link" href="/">Info</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/">About</a>

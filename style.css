@@ -7,6 +7,11 @@ img {
     height: auto;
 }
 
+#lang-select li {
+    list-style: none;
+    padding: 10px;
+}
+
 .content-main {
     min-height: 100vh;
 }

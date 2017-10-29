@@ -8,6 +8,16 @@
 
         var full_data = uni_select_data;
 
+        $('.caretflip').on('click', function() {
+            if ($(this).hasClass('collapsed')) {
+                $(this).removeClass('oi-caret-left');
+                $(this).addClass('oi-caret-bottom');
+            } else {
+                $(this).addClass('oi-caret-left');
+                $(this).removeClass('oi-caret-bottom');
+            }
+        });
+
         $('#regionSelect').on('change', function() {
             var region = $('#regionSelect').find(':selected').val();
             insertOptions(region, 'level2');

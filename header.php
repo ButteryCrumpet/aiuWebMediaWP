@@ -10,7 +10,7 @@
         </button>
 
         <div class="col-4 col-md-2 text-right text-md-center order-lg-6">
-          <a href="/devserv">
+          <a href="/">
             <!--<img src="" height="30" alt="Logo">-->Logo
           </a>
         </div>

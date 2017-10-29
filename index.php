@@ -7,13 +7,16 @@ get_header();
         <?php include 'sidebar.php'; ?>
     </div>
     <div class="col-md-9">
+    <?php if ('study_abroad' === get_query_var('post_type')) {
+            render_location_select(get_post());
+        } ?>
     <?php if (have_posts()) :
         while ( have_posts() ) : the_post();
     ?>
         <section class="fdb-block awm-block">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-10 col-sm-6 col-md-4 col-lg-3 m-auto m-md-0">
+                    <div class="col-md-4">
                     <a href="<?php echo get_the_permalink(); ?>">    
                         <img alt="image" class="img-fluid" src="<?php echo get_the_post_thumbnail_url(); ?>">
                     </a>    

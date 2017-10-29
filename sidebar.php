@@ -1,5 +1,6 @@
 <div id="bus" class="awm-block">
     BUS -timetables
+    <?php var_dump(get_query_var('lang')); ?>
 </div>
 <div id="filters" class="awm-block">
     <ul class="list-group">
@@ -20,21 +21,21 @@
             <div class="col-11">
             <a href="<?php echo $link; ?>"><?php echo $cat->name; ?></a>
             </div>
-            <span style="cursor: pointer;" data-toggle="collapse" href="#collapse-<?php echo $cat->term_id; ?>" class="oi oi-caret-left"></span>
+            <span style="cursor: pointer;" data-toggle="collapse" href="#collapse-<?php echo $cat->term_id; ?>" class="collapsed oi oi-caret-left caretflip"></span>
             </div>
         </div>
         <div class='collapse' id="collapse-<?php echo $cat->term_id; ?>">
         <?php foreach ($childs as $child) { 
             $child_link = get_category_link( $child->term_id );
             ?>
-            <p class="card-header"><a href="<?php echo $child_link; ?>"><?php echo $child->name ?></a></p>
+            <p class="card-header"><a href="<?php echo $child_link; ?>">- <?php echo $child->name ?></a></p>
         <?php } ?>
         </div>
         <?php
         }  
         ?>
         <p class="card-header bg-light">
-            <a href="/devserv/?post_type=study_abroad" >Link to SA</a>
+            <a href="/?post_type=study_abroad" >Link to SA</a>
         </p>
     </ul>
 </div>
