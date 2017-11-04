@@ -8,3 +8,9 @@ menu options
 colours
 
 stretch background image
+
+
+Website:http://djc.ifa.mybluehost.me
+Admin:http://djc.ifa.mybluehost.me/wp-admin
+Username:crumpetybumpety
+Password:B7CDE5AF0u8x9slj3z6c1r4gb2

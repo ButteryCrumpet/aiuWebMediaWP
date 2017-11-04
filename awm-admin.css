@@ -1,8 +1,37 @@
+td[data-v-efb38578] {
+    text-align: center;
+    padding: 2px;
+}
 
-#ttable-addtime {
+#spec-dates[data-v-537e3cb6] {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+}
+
+#date-sels[data-v-537e3cb6] {
+    margin-right: 20px
+}
+
+.clink {
+    color: #0056b3 !important;
     cursor: pointer;
 }
 
-#location-all {
-    border: none;
+.clink:hover {
+    color: #0056b3 !important;
+    text-decoration: underline !important;
+}
+
+th[data-v-537e3cb6] {
+    font-weight: 400;
+    border-bottom: 1px solid grey
+}
+
+td[data-v-537e3cb6] {
+    text-align: center
+}
+
+p[data-v-537e3cb6] {
+    margin: 5px
 }
