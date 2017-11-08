@@ -9,22 +9,32 @@ img {
 
 #awm-header {
     height: 300px;
+    background-image: url('https://www.japan-guide.com/thumb/XYZlistXYZe1203_1680.jpg');
+}
+
+.awm-recommended {
+    border-radius: 5px;
+    margin-top: 15px;
+    padding: 15px;
+    color: white;
+    height: 150px;
+    background-size: cover;
+}
+
+.awm-recommended h5 {
+    margin: 0;
 }
 
 .content-main {
     min-height: 100vh;
 }
 
-#bus {
-    min-height: 200px;
+#location-all {
+    margin-top: 30px;
 }
 
 #filters ul {
     list-style: none;
-}
-
-#filters ul > li {
-    padding: 10px;
 }
 
 #filters .children {
@@ -34,29 +44,19 @@ img {
 .awm-block {
     border-radius: 5px;
     margin-bottom: 10px;
-    margin-top: 10px;
+    margin-top: 30px;
     box-shadow: 0 -3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
-.caret-right {
-    border-bottom: 4px solid transparent;
-    border-top: 4px solid transparent;
-    border-left: 4px solid;
-    display: inline-block;
-    height: 0;
-    opacity: 0.3;
-    vertical-align: top;
-    width: 0;
+.menu-icon:hover {
+    color: black;
 }
 
-.busthing {
-    width: 50px;
-    height: 50px;
-    border-radius: 100%;
-    background-color: lightseagreen;
-    display: inline-block;
+.bus-time {
+    padding: 10px;
+    border-top: 1px solid #cacaca;
 }
 
-.inliney {
-    display: inline-block;
+.bus-time p {
+    margin: 0;
 }

@@ -58,6 +58,9 @@ function render_location_select( $post ) {
             <select id="regionSelect" class="form-control" name="<?php echo $name; ?>">
             <?php render_cat_option($taxonomy, $topLevel, $current); ?>
             </select>
+            <span class="input-group-btn">
+                <button class="btn btn-secondary" type="button">Search Region</button>
+            </span>
         </div>
             <br>
         <div class="input-group">
@@ -65,6 +68,9 @@ function render_location_select( $post ) {
             <select id="countrySelect" class="form-control" name="<?php echo $name; ?>">
             <?php render_cat_option($taxonomy, $initLevel2, $current); ?>
             </select>
+            <span class="input-group-btn">
+                <button class="btn btn-secondary" type="button">Search Country</button>
+            </span>
         </div>
             <br>
         <div class="input-group">
@@ -72,6 +78,9 @@ function render_location_select( $post ) {
             <select id="uniSelect" class="form-control" name="<?php echo $name; ?>">
             <?php render_cat_option($taxonomy, $initLevel3, $current); ?>
             </select>
+            <span class="input-group-btn">
+                <button class="btn btn-secondary" type="button">Search University</button>
+            </span>
         </div>
 		</div>
     </div>

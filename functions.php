@@ -12,6 +12,7 @@ function akiWebMedia_style_scripts() {
 	wp_enqueue_style( 'froala', get_template_directory_uri() . '/css/froala_blocks.css', false );
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', false );
 	wp_enqueue_style( 'iconic', get_template_directory_uri() . '/css/open-iconic-bootstrap.css', false );
+	wp_enqueue_style( 'fontawe', get_template_directory_uri() . '/fonts/font-awesome/css/font-awesome.min.css', false );
 	
 	wp_enqueue_script('jquery');
 	wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js');

@@ -18,7 +18,7 @@ get_header();
                 <div class="row align-items-center">
                     <div class="col-md-4">
                     <a href="<?php echo get_the_permalink(); ?>">    
-                        <img alt="image" class="img-fluid" src="<?php echo get_the_post_thumbnail_url(); ?>">
+                        <img alt="image" class="" src="<?php echo get_the_post_thumbnail_url(); ?>">
                     </a>    
                 </div>
                     <div class="col-12 col-md-8 ml-auto pt-5 pt-md-0">

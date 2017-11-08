@@ -1,9 +1,9 @@
+<div id="filters" class="awm-block">
+    <?php include "inc/catlinks.php"; ?>
+</div>
 <div id="bus" class="awm-block">
 <?php include "inc/bustimes.php"; ?>
 </div>
-<div id="filters" class="awm-block">
+<div id="recommended" class="awm-block">
     <?php include "inc/recommended.php"; ?>
-</div>
-<div id="filters" class="awm-block">
-    <?php include "inc/catlinks.php"; ?>
 </div>
