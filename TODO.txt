@@ -1,13 +1,3 @@
--- do last -- 
-redo timetables somehow - rewrite JS
-
--- styling --
-bootstrap and froala
-insert popper.js
-menu options
-colours
-
-stretch background image
 
 
 Website:http://djc.ifa.mybluehost.me

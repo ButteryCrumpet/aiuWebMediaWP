@@ -1,6 +1,6 @@
 
 <div class="container">
-<div>Next Busses</div>
+<div class="awm-title">Next Busses</div>
 
 <?php
 $times = get_next_bus();
@@ -11,6 +11,7 @@ foreach ($times as $time) {
     $now = current_time('Hi');
     $in = ($time['time'] > $now) ? $time['time'] - $now : (2359 - $now) + $time['time'];
     $in = convertToHoursMins($in);
+    $departure = $time['time'] ? $time['time'] : 'No more service';
     ?>
     
     <div class="row bus-time">
@@ -24,7 +25,7 @@ foreach ($times as $time) {
         </div>
         <div class="bus-info col">
             <h6><?php echo $from; ?> &rArr; <?php echo $to; ?></h6>
-            <p><?php echo $time['time']; ?></p>
+            <p><?php echo $departure; ?></p>
         </div>
     </div>
         

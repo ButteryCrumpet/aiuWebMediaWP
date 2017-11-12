@@ -27,16 +27,16 @@ function save_timetable_meta( $post_id, $post ) {
         return $post_id;
     }
 
-    $meta_value = get_post_meta( $post_id, $meta_key, true );
+    $meta_value = get_post_meta( $post_id, 'ttableoutput', true );
     $new_meta_value = $_POST['ttableoutput'];
     $formated_times = stripslashes($new_meta_value);
     $formated_times = json_decode($formated_times, true);
 
-    if (array() == $meta_value) {
-        add_post_meta( $post_id, 'raw_ttable', $new_meta_value, true );
-    } else {
+    if ( ! add_post_meta( $post_id, 'raw_ttable', $new_meta_value, true )) {
         update_post_meta( $post_id, 'raw_ttable', $new_meta_value );
-        update_post_meta( $post_id, 'formated_times', $formated_times );
+    }
+    if ( ! add_post_meta( $post_id, 'formated_ttable', $formated_times, true )) {
+        update_post_meta( $post_id, 'formated_ttable', $formated_times );
     }
 }
 

@@ -16,7 +16,7 @@ foreach ($cats as $cat) {
             <div class="col-10">
             <a href="<?php echo $link; ?>"><?php echo $cat->name; ?></a>
             </div>
-            <span style="cursor: pointer;" data-toggle="collapse" href="#collapse-<?php echo $cat->term_id; ?>" class="collapsed oi oi-menu menu-icon"></span>
+            <span style="cursor: pointer;" data-toggle="collapse" href="#collapse-<?php echo $cat->term_id; ?>" class="collapsed fa fa-bars fa-lg menu-icon"></span>
         </div>
     </li>
     <li class='collapse' id="collapse-<?php echo $cat->term_id; ?>">
@@ -30,6 +30,6 @@ foreach ($cats as $cat) {
     }  
     ?>
     <p class="list-group-item list-group-item-action">
-        <a href="/?post_type=study_abroad" >Link to SA</a>
+        <a href="/?post_type=study_abroad" >Study Abroad</a>
     </p>
 </ul>

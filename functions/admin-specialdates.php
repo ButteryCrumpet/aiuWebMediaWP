@@ -8,6 +8,7 @@ add_action('add_meta_boxes', 'add_specialdates_metaboxes');
 
 function render_dates_metabox( $post ) {
     $vals = get_post_meta($post->ID, 'raw_dates', true);
+
     $vals = (!$vals) ? '[]' : $vals;
     ?>
     <div id="app">
@@ -18,48 +19,39 @@ function render_dates_metabox( $post ) {
 
 function save_specialdates_meta( $post_id, $post ) {
 
-    if ( ! isset( $_POST['datoutput'])) {
+    if ( ! isset( $_POST['dateoutput'])) {
+        update_post_meta( $post_id, 'formated_dates', 'what!' );
         return $post_id;
     }
 
-    $meta_key = 'dateoutput';
-    $meta_value = get_post_meta( $post_id, $meta_key, true );
-    $new_meta_value = $_POST[$meta_key];
-    $formated_dates = validate_dates($new_meta_value);
+    $new_meta_value = $_POST['dateoutput'];
+    $formated_times = stripslashes($new_meta_value);
+    $formated_dates = validate_dates($new_meta_value, true);
 
-    if (array() == $meta_value) {
-        add_post_meta( $post_id, 'raw_dates', $new_meta_value, true );
-    } else {
-        update_post_meta( $post_id, 'raw_dates', $new_meta_value );
-        update_post_meta( $post_id, 'formated_dates', $formated_dates );
-    }
+    update_post_meta( $post_id, 'raw_dates', $new_meta_value );
+    update_post_meta( $post_id, 'formated_dates', $formated_dates );
+
 }
 
 function validate_dates($input) {
     $input = stripslashes($input);
     $decoded = json_decode($input, true);
-    var_dump($decoded);
     $current_month = date('n');
     $php_formated = array();
-    foreach($decoded as $daterange) {
+    foreach($decoded as $i => $daterange) {
+        $range_pos = 'start';
         foreach ($daterange as $date) {
             $separated = explode('/', $date);
             $month = $separated[0];
             $day = $separated[1];
-            $year = ($month < $current_month) ? date('y') + 1 : date('y'); 
-            $php_formated[]['month'] = $month;
-            $php_formated[]['day'] = $day;
-            $php_formated[]['year'] = $year;
+            $php_formated[$i][$range_pos]['month'] = $month;
+            $php_formated[$i][$range_pos]['day'] = $day;
+            $range_pos = 'end';
         }
     }
 
     return $php_formated;
     
 };
-
-function generateDTPeriod($start, $end) {
-    $month = date('n');
-    
-}
 
 add_action('save_post', 'save_specialdates_meta', 10, 2);

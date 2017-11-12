@@ -1,5 +1,14 @@
 body {
     box-sizing: border-box;
+    background-color: #F0F0F0 !important;
+}
+
+header {
+    background-color: #F0F0F0 !important;
+}
+
+footer {
+    background-color: #F0F0F0 !important;
 }
 
 img {
@@ -7,16 +16,21 @@ img {
     height: auto;
 }
 
+a:hover {
+    color: #008D38;
+}
+
 #awm-header {
     height: 300px;
     background-image: url('https://www.japan-guide.com/thumb/XYZlistXYZe1203_1680.jpg');
+    border: none;
 }
 
 .awm-recommended {
     border-radius: 5px;
     margin-top: 15px;
-    padding: 15px;
     color: white;
+    padding: 10px;
     height: 150px;
     background-size: cover;
 }
@@ -25,8 +39,12 @@ img {
     margin: 0;
 }
 
-.content-main {
+.content-all {
     min-height: 100vh;
+}
+
+.article-single {
+    margin-top: 30px;
 }
 
 #location-all {
@@ -41,11 +59,49 @@ img {
     display: none;
 }
 
+#logo {
+    color: white;
+}
+
+#recommended {
+    padding-bottom: 15px;
+}
+
 .awm-block {
     border-radius: 5px;
-    margin-bottom: 10px;
-    margin-top: 30px;
+    margin-bottom: 20px;
+    margin-top: 10px;
     box-shadow: 0 -3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    background-color: #fff;
+    /* border: 1px solid #008D38; */
+    color: #444444;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    background-color: #FFFFFF;
+}
+
+.article-list-item {
+    padding: 20px 0;
+}
+
+.awm-block a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.awm-block a:hover {
+    color: inherit;
+}
+
+.detail-wrapper {
+    padding: 5px;
+    border-bottom: 1px solid grey;
+}
+
+.detail-wrapper p {
+    margin: 0;
 }
 
 .menu-icon:hover {
@@ -59,4 +115,57 @@ img {
 
 .bus-time p {
     margin: 0;
+}
+
+.terms-list {
+    margin-left: 5px;
+    color: white !important;
+}
+
+.awm-pagin {
+    padding: 0;
+    margin-top: 15px;
+}
+
+.awm-pagin > p {
+    text-align: center;
+}
+
+.awm-pagin a {
+    padding: 5px;
+    box-shadow: 0 -3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    /* border: 1px solid #008D38; */
+    color: #008D38;
+    background-color: white;
+}
+
+.awm-pagin a:hover {
+    color: #008D38;
+}
+
+.active-page {
+    color: grey !important;
+}
+
+.article-title {
+    margin-bottom: 10px;
+    border-bottom: 1px solid grey;
+    padding: 15px;
+}
+
+.awm-title {
+    padding: 5px;
+    padding-top: 10px;
+    margin: 10px;
+    border-bottom: 1px solid grey;
+}
+
+.awm-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.a-list-content {
+    border-bottom: 1px solid grey;
+    padding-bottom: 15px;
 }
