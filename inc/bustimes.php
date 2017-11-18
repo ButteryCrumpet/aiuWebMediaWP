@@ -14,8 +14,8 @@ foreach ($times as $time) {
     $departure = $time['time'] ? $time['time'] : 'No more service';
     ?>
     
-    <div class="row bus-time">
-        <div class="col-3 offset-xl-2 container">
+    <div class="row bus-time align-items-center">
+        <div class="col-3 container">
             <div class="row align-items-center justify-content-center">
                 <div class="fa-stack fa-lg bus-icon align-middle">
                     <i class="fa fa-square-o fa-stack-2x" style="color: <?php echo $color; ?>"></i>
@@ -32,4 +32,7 @@ foreach ($times as $time) {
     <?php
 }
 ?>
+<div class="row awm-side-link">
+    <a href="<?php echo get_post_type_archive_link('timetable'); ?>">Timetables <span class="fa fa-angle-double-right" aria-hidden="true"></span></a> <!-- Timetable Page Link -->
+</div>
 </div>

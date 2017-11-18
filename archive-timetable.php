@@ -4,25 +4,14 @@ get_header();
 <div class="container">
     <div class="row">
         <div class="col-md-9 order-md-2">
-        <?php if (is_category()) {
-            ?>
             <div class="awm-block">
-                <h5 class="awm-title cat-title"><?php single_cat_title(); ?></h5>
+                <h5 class="awm-title cat-title">Timetables</h5>
             </div>
             <?php 
-        }
-        if ('study_abroad' === get_query_var('post_type')) {
-            ?>
-            <div class="awm-block">
-                <h5 class="awm-title cat-title">Study Abroad</h5>
-            </div>
-            <?php
-            include "inc/study-abroad-search.php";
-        }
         if (have_posts()) {
         while ( have_posts() ) {
             the_post();
-            include "inc/a-list-item.php";
+            include "inc/ttable-list-item.php";
         }
         } ?>
             <div class="pagin-wrapper">

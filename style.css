@@ -1,6 +1,7 @@
 body {
     box-sizing: border-box;
     background-color: #F0F0F0 !important;
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
 }
 
 header {
@@ -21,9 +22,13 @@ a:hover {
 }
 
 #awm-header {
-    height: 300px;
-    background-image: url('https://www.japan-guide.com/thumb/XYZlistXYZe1203_1680.jpg');
+    height: 45vh;
+    background-size: cover;
+    background-position: center;
     border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .awm-recommended {
@@ -41,10 +46,6 @@ a:hover {
 
 .content-all {
     min-height: 100vh;
-}
-
-.article-single {
-    margin-top: 30px;
 }
 
 #location-all {
@@ -67,8 +68,12 @@ a:hover {
     padding-bottom: 15px;
 }
 
+.cat-wrapper {
+    padding-bottom: 5px;
+}
+
 .awm-block {
-    border-radius: 5px;
+    /* border-radius: 5px; */
     margin-bottom: 20px;
     margin-top: 10px;
     box-shadow: 0 -3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
@@ -102,6 +107,11 @@ a:hover {
 
 .detail-wrapper p {
     margin: 0;
+    margin-right: 10px;
+}
+
+.menu-icon {
+    cursor: pointer;
 }
 
 .menu-icon:hover {
@@ -117,8 +127,20 @@ a:hover {
     margin: 0;
 }
 
+.awm-side-link {
+    padding: 10px;
+    display: flex;
+    flex-direction: row-reverse;
+    border-top: 1px solid #cacaca;
+}
+
+.awm-read-more {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
 .terms-list {
-    margin-left: 5px;
+    margin: 2px;
     color: white !important;
 }
 
@@ -147,15 +169,20 @@ a:hover {
     color: grey !important;
 }
 
+.awm-article {
+    padding: 20px;
+}
+
 .article-title {
     margin-bottom: 10px;
     border-bottom: 1px solid grey;
     padding: 15px;
+    padding-left: 0px;
 }
 
 .awm-title {
-    padding: 5px;
     padding-top: 10px;
+    padding-bottom: 0.5em;
     margin: 10px;
     border-bottom: 1px solid grey;
 }
@@ -169,3 +196,60 @@ a:hover {
     border-bottom: 1px solid grey;
     padding-bottom: 15px;
 }
+
+.a-list-content > p {
+    line-height: 1.8;
+    font-size: 1.125rem;
+}
+
+.awm-social-buttons {
+
+}
+
+.awm-mobile-menu {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;  
+}
+
+.awm-mobile-menu a {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#menu-collapse {
+    
+}
+
+.awm-mobile-menu p {
+    margin: 0;
+}
+
+.awm-mobmenu-wrapper  a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.awm-mobmenu-wrapper  a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+.awm-mobmenu-wrapper {
+    color: #444444;
+}
+
+.tt-available {
+    color: #008D38;
+}
+
+/*
+.ribbon-left {
+    border-color: grey;
+    border-top: none;
+    border-bottom: none;
+    border-right: none;
+    border-left: 10px solid;
+} */

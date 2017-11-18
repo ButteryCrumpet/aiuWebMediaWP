@@ -16,13 +16,16 @@ function render_location_select( $post ) {
     $terms = get_terms($taxonomy,array('hide_empty' => 0));
     $postterms = get_the_terms( $post->ID,$taxonomy );
     $current = [];
-    foreach ($postterms as $term) {
-        $current[] = $term->term_id;
+
+    if ($postterms) {
+        foreach ($postterms as $term) {
+            $current[] = $term->term_id;
+        }
     }
 
     //move to build cat hierarchy function build proper heirarchy, super useful
     $topLevel = [];
-    $start;
+    $start = $terms[0]->term_id;
     $parentChildren = [];
     foreach ($terms as $term) {
         if ( ! $term->parent ) {
@@ -35,13 +38,13 @@ function render_location_select( $post ) {
         }
     }
     $initLevel2 = $parentChildren[$start];
-    $start2;
+    $start2 = $initLevel2[0]->term_id;
     foreach ($initLevel2 as $term) {
         if ( in_array($term->term_id, $current)) {
             $start2 = $term->term_id;
         }
     }
-    $initLevel3 = $parentChildren[$start2];
+    $initLevel3 = isset($parentChildren[$start2]) ? isset($parentChildren[$start2]) : '' ;
     $jsonLevels = json_encode($parentChildren);
  
 	//Name of the form
@@ -58,9 +61,6 @@ function render_location_select( $post ) {
             <select id="regionSelect" class="form-control" name="<?php echo $name; ?>">
             <?php render_cat_option($taxonomy, $topLevel, $current); ?>
             </select>
-            <span class="input-group-btn">
-                <button class="btn btn-secondary" type="button">Search Region</button>
-            </span>
         </div>
             <br>
         <div class="input-group">
@@ -68,9 +68,6 @@ function render_location_select( $post ) {
             <select id="countrySelect" class="form-control" name="<?php echo $name; ?>">
             <?php render_cat_option($taxonomy, $initLevel2, $current); ?>
             </select>
-            <span class="input-group-btn">
-                <button class="btn btn-secondary" type="button">Search Country</button>
-            </span>
         </div>
             <br>
         <div class="input-group">
@@ -78,9 +75,6 @@ function render_location_select( $post ) {
             <select id="uniSelect" class="form-control" name="<?php echo $name; ?>">
             <?php render_cat_option($taxonomy, $initLevel3, $current); ?>
             </select>
-            <span class="input-group-btn">
-                <button class="btn btn-secondary" type="button">Search University</button>
-            </span>
         </div>
 		</div>
     </div>

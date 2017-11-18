@@ -1,5 +1,9 @@
+<!DOCTYPE HTML>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Akita Web Media: Information and events around Akita Int. University and Akita Prefecture">
+  <meta charset="<?php bloginfo( 'charset' ); ?>">
   <meta property="fb:app_id" content="1159304874214007" />
   <meta property="og:url" content="<?php echo get_the_permalink(); ?>" />
   <meta property="og:type" content="website" />
@@ -11,17 +15,31 @@
   <?php wp_head(); ?>
 </head>
 <header>
-  <div class="container">
-    <nav id="awm-header" class="awm-block navbar navbar-expand-md no-gutters">
-
-      <div id="logo" class="col-4 col-md-2 text-right text-md-center order-lg-6">
-        <a href="/">
-          <h3>AWM Logo<h3>
-        </a>
-      </div>
-    </nav>
+  <div id="awm-header" class="container-fluid" style="background-image: url(<?php header_image(); ?>)">
+    <div id="logo" class="">
+      <a href="/">
+        <h3>
+          <h3>
+      </a>
+    </div>
   </div>
 </header>
+<div class="d-md-none awm-mobmenu-wrapper">
+  <nav class="awm-mobile-menu">
+    <a href="<?php echo get_home_url(); ?>" >
+      <i class="fa fa-lg fa-home" aria-hidden="true"></i>
+    </a>
+    <a data-toggle="collapse" href="#menu-collapse">
+      <i class="fa fa-bars fa-lg menu-icon"></i>
+    </a>
+    <a class="smooth-scroll" href="#bus-times">
+      <i class="fa fa-lg fa-bus"></i>
+    </a>
+  </nav>
+  <div class="collapse" id="menu-collapse">
+    <?php include 'inc/mob-menu.php'; ?>
+  </div>
+</div>
 
 <body>
   <div id="fb-root"></div>
@@ -31,7 +49,7 @@
       if (d.getElementById(id)) return;
       js = d.createElement(s);
       js.id = id;
-      js.async=true;
+      //js.async = true;
       js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.11&appId=1159304874214007';
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
@@ -43,7 +61,7 @@
       if (d.getElementById(id)) return t;
       js = d.createElement(s);
       js.id = id;
-      js.async=true;
+      //js.async = true;
       js.src = "https://platform.twitter.com/widgets.js";
       fjs.parentNode.insertBefore(js, fjs);
 

@@ -6,7 +6,6 @@ function add_timetable_metaboxes() {
 add_action('add_meta_boxes', 'add_timetable_metaboxes');
 
 function render_timetable_metabox( $post ) {
-
     $vals = get_post_meta($post->ID, 'raw_ttable', true);
     $spec_times = get_spec_times();
     $vals = (!$vals) ? '[]' : $vals;
@@ -14,7 +13,7 @@ function render_timetable_metabox( $post ) {
     ?>
     <div id="app">
         <timetable 
-            :init-ttable='<?php echo $vals; ?>' 
+            :init-ttable='<?php echo $vals ?>' 
             :init-spec-times="<?php echo $spec_times; ?>" >
         </timetable>
     </div>
@@ -27,13 +26,13 @@ function save_timetable_meta( $post_id, $post ) {
         return $post_id;
     }
 
-    $meta_value = get_post_meta( $post_id, 'ttableoutput', true );
     $new_meta_value = $_POST['ttableoutput'];
-    $formated_times = stripslashes($new_meta_value);
-    $formated_times = json_decode($formated_times, true);
+    $stripped_times = stripslashes($new_meta_value);
+    $formated_times = json_decode($stripped_times, true);
+    $valid_json = $stripped_times;
 
-    if ( ! add_post_meta( $post_id, 'raw_ttable', $new_meta_value, true )) {
-        update_post_meta( $post_id, 'raw_ttable', $new_meta_value );
+    if ( ! add_post_meta( $post_id, 'raw_ttable', $valid_json, true )) {
+        update_post_meta( $post_id, 'raw_ttable', $valid_json );
     }
     if ( ! add_post_meta( $post_id, 'formated_ttable', $formated_times, true )) {
         update_post_meta( $post_id, 'formated_ttable', $formated_times );
@@ -41,7 +40,7 @@ function save_timetable_meta( $post_id, $post ) {
 }
 
 function get_spec_times() {
-    $spec_time_names = "['Standard','Saturday','Sunday',";
+    $spec_time_names = "['Standard','Saturday','Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', ";
     
     $args = array(
         'post_type' => array (
