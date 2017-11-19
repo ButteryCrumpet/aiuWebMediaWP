@@ -14,7 +14,7 @@
             $about = get_page_by_path('about');
             if ($about) :
           ?>
-            <a class="nav-link" href="<?php echo $about->the_permalink; ?>"><?php echo awm_tr('About'); ?></a>
+            <a class="nav-link" href="<?php echo get_the_permalink($about->ID); ?>"><?php echo awm_tr('About'); ?></a>
             <?php endif; ?>
           </li>
           <li class="nav-item">

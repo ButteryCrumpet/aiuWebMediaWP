@@ -22,9 +22,10 @@ function akiWebMedia_style_scripts() {
 }
 
 function akiWebMedia_admin_style_scripts() {
+	
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', false );
 	wp_enqueue_script('adminJS', get_template_directory_uri() . '/js/admin.js');
-	wp_enqueue_style( 'core', get_stylesheet_directory_uri() . '/awm-admin.css', false );
+	//wp_enqueue_style( 'core', get_stylesheet_directory_uri() . '/awm-admin.css', false );
 	wp_enqueue_script('vueMani', get_template_directory_uri() . '/js/awmv/manifest.f160a0c8475225e8a6d8.js', array(), null, true);
 	wp_enqueue_script('vueVend', get_template_directory_uri() . '/js/awmv/vendor.c8b39cfc5e84eec96310.js', array(), null, true);
 	wp_enqueue_script('vueApp', get_template_directory_uri() . '/js/awmv/app.1cab2e80af2b09f2e5cb.js', array(), null, true);
@@ -42,13 +43,13 @@ add_action( 'init', 'register_theme_menus' );
 function custom_excerpt_length( $length ) {
 	return 10;
 }
-add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+//add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
 function awm_get_excerpt($count){
 	$excerpt = get_the_content();
 	$excerpt = strip_tags($excerpt);
 	$excerpt = mb_substr($excerpt, 0, $count);
-	$excerpt .= '...';
+	$excerpt .= ' &hellip;';
 	return $excerpt;
   }
  //add_filter( 'excerpt_length', 'awm_excerpt_length' );
@@ -59,7 +60,7 @@ function add_custom_post_type_to_query( $query ) {
 		return;
 	}
 
-    if ( $query->is_main_query() && get_current_blog_id() === 3) {
+    if ( $query->is_main_query() && get_current_blog_id() === 3  && $query->is_front_page()) {
 		$query->set( 'post_type', array('post', 'study_abroad') );
 	}
 }
@@ -106,11 +107,11 @@ function render_tags_list($post_id) {
 	echo $html;
 }
 
-function trim_length( $title, $max = 32 ) {
-	if( mb_strlen( $title ) > $max ) {
-		return mb_substr( $title, 0, $max ). " &hellip;";
+function trim_length( $string, $max = 32 ) {
+	if( mb_strlen( $string ) > $max ) {
+		return mb_substr( $string, 0, $max ). "&hellip;";
 	} else {
-		return $title;
+		return $string;
 	}
 }
 
@@ -205,17 +206,17 @@ function printable_availablity($time) {
 
 	foreach ($time['rules'] as $rule) {
 		if ($rule['rule'] == 'Not Available') {
-			$not_available .= $rule['name'] . ' ';
+			$not_available .= awm_tr($rule['name']) . ' ';
 		} else if ($rule['rule'] == 'Strictly Available') {
-			$only_available .= $rule['name'] . ' ';
+			$only_available .= awm_tr($rule['name']) . ' ';
 		}
 	}
 
 	if ($only_available != '') {
-		$only_available = '<div>Only Available: ' . $only_available . '</div>';
+		$only_available = '<div>' . awm_tr('Only Available') . ': ' . $only_available . '</div>';
 	}
 	if ($not_available != '') {
-		$not_available = '<div>Not Available: ' . $not_available . '</div>';
+		$not_available = '<div>' . awm_tr('Not Available') . ': ' . $not_available . '</div>';
 	}
 
 	return $only_available . $not_available;
@@ -251,6 +252,17 @@ function awm_tr($string) {
 		'Last' => '最後',
 		'Next Busses' => '次のバス',
 		'Read More' => '続きを読む',
+		'Not Available' => '運休',
+		'Only Available' => '運行',
+		'Monday' => '月',
+		'Tuesday' => '火',
+		'Wednesday' => '水',
+		'Thursday' => '木',
+		'Friday' => '金',
+		'Saturday' => '土',
+		'Sunday' => '日',
+		'Long Holiday' => '長期休暇',
+		'Public Holidays' => '祝日',
 	);
 	if (get_current_blog_id() === 3 && array_key_exists($string, $transMap)) {
 		return $transMap[$string];
