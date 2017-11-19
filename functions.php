@@ -212,13 +212,13 @@ function printable_availablity($time) {
 	}
 
 	if ($only_available != '') {
-		$only_available = 'Only Available: ' . $only_available;
+		$only_available = '<div>Only Available: ' . $only_available . '</div>';
 	}
 	if ($not_available != '') {
-		$not_available = 'Not Available: ' . $not_available;
+		$not_available = '<div>Not Available: ' . $not_available . '</div>';
 	}
 
-	return $only_available . '<br>' . $not_available;
+	return $only_available . $not_available;
 }
 
 
@@ -229,4 +229,33 @@ function convertToHoursMins($time) {
     $hours = floor($time / 60);
     $minutes = ($time % 60);
     return $hours . 'hrs ' . $minutes . 'mins';
+}
+
+function add_colon_time($time) {
+	return substr_replace($time, ':', 2, 0);
+}
+
+function awm_tr($string) {
+	$transMap = array(
+		'Study Abroad' => '留学',
+		'No Posts Found' => '記事がございません',
+		'Home' => 'ホーム',
+		'Timetables' => '時刻表',
+		'About' => 'ご案内',
+		'Departure' => '出発',
+		'Arrival' => '到着',
+		'Availablility' => '可用性',
+		'Select Region' => '地域',
+		'Recommended' => 'おすすめ記事',
+		'First' => '最初',
+		'Last' => '最後',
+		'Next Busses' => '次のバス',
+		'Read More' => '続きを読む',
+	);
+	if (get_current_blog_id() === 3 && array_key_exists($string, $transMap)) {
+		return $transMap[$string];
+	}
+	else {
+		return $string;
+	}
 }

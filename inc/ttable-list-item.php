@@ -18,7 +18,11 @@
     </div>
     <div class="collapse" id="ttable-collapse-<?php echo get_the_ID(); ?>">
         <table class="table">
-            <tr><th>Departure</th><th>Arrival</th><th>Availability</th></tr>
+            <tr>
+                <th><?php echo awm_tr('Departure'); ?></th>
+                <th><?php echo awm_tr('Arrival'); ?></th>
+                <th><?php echo awm_tr('Availablility'); ?></th>
+            </tr>
             <?php
             $times = get_post_meta(get_the_ID(), 'formated_ttable', true);
             $day_types = get_day_types();
@@ -27,8 +31,8 @@
             $availability = printable_availablity($time);
             ?>
             <tr>
-            <td class="<?php echo ($avail) ? 'tt-available' : ''; ?>"><?php echo $time['departure']; ?></td>
-            <td class="<?php echo ($avail) ? 'tt-available' : ''; ?>"><?php echo $time['arrival']; ?></td>
+            <td class="<?php echo ($avail) ? 'tt-available' : 'tt-unavailable'; ?>"><?php echo add_colon_time($time['departure']); ?></td>
+            <td class="<?php echo ($avail) ? 'tt-available' : 'tt-unavailable'; ?>"><?php echo add_colon_time($time['arrival']); ?></td>
             <td><?php echo $availability; ?></td>
             </tr>
             <?php } ?>

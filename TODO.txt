@@ -10,8 +10,8 @@ smooth scroll to bus times <<<< DONE
 switch language menu <<<< DONE
 top page language select -> like template <<<< DONE
 set up banner/logo pics <<<< DONE
-translate -> options for all words
-scroll to top for mobile
+translate -> options for all words <<<< DONE
+scroll to top for mobile <<<< DONE
 inc/postThumb -> image background author / date locked to bottom (flex column space between)
 clean up a lot
 sort out 404s

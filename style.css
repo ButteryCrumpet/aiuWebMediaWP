@@ -38,9 +38,16 @@ a:hover {
     padding: 10px;
     height: 150px;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .awm-recommended h5 {
+    margin: 0;
+}
+
+.awm-recommended p {
     margin: 0;
 }
 
@@ -107,7 +114,7 @@ a:hover {
 
 .detail-wrapper p {
     margin: 0;
-    margin-right: 10px;
+    padding: 5px;
 }
 
 .menu-icon {
@@ -203,7 +210,7 @@ a:hover {
 }
 
 .awm-social-buttons {
-
+    padding: 5px;
 }
 
 .awm-mobile-menu {
@@ -241,8 +248,54 @@ a:hover {
     color: #444444;
 }
 
+#scrolltop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.9);
+    width: 50px;
+    height: 50px;
+    display: block;
+    text-decoration: none;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+    display: none;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+#scrolltop i {
+    color: #fff;
+    margin: 0;
+    position: relative;
+    left: 16px;
+    top: 13px;
+    font-size: 19px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#return-to-top:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+#return-to-top:hover i {
+    color: #fff;
+    top: 5px;
+}
+
 .tt-available {
     color: #008D38;
+}
+
+.tt-unavailable {
+    color: rgb(161, 161, 161);
 }
 
 /*

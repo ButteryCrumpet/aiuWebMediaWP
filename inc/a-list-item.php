@@ -19,7 +19,7 @@
                     <?php echo awm_get_excerpt(200); ?>
                 </p>
                 <div class="awm-read-more">
-                    <a href="<?php echo get_the_permalink(); ?>">Read More <span class="fa fa-angle-double-right" aria-hidden="true"></span></a>
+                    <a href="<?php echo get_the_permalink(); ?>"><?php echo awm_tr('Read More'); ?> <span class="fa fa-angle-double-right" aria-hidden="true"></span></a>
                 </div>
             </div>
         </div>

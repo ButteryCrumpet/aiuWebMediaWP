@@ -11,7 +11,7 @@ $args = array(
 $query = new WP_Query( $args );
  ?>
 <div class="container">
-<div class="awm-title">Recommended</div>
+<div class="awm-title"><?php echo awm_tr('Recommended'); ?></div>
 
 <?php
 // Check that we have query results.
@@ -29,6 +29,7 @@ if ( $query->have_posts() ) {
                     <?php echo trim_length(get_the_title()); ?>
                 </h5>
                 <p>
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
                     <?php echo get_the_date('F j, Y'); ?>
                 </p>
             </div>

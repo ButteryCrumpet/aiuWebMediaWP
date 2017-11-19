@@ -4,17 +4,17 @@
       <div class="col-12 col-md-8">
         <ul class="nav justify-content-center justify-content-md-start">
           <li class="nav-item">
-            <a class="nav-link active" href="<?php echo get_home_url(); ?>">Home</a>
+            <a class="nav-link active" href="<?php echo get_home_url(); ?>"><?php echo awm_tr('Home'); ?></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo get_post_type_archive_link('timetable'); ?>">Timetables</a>
+            <a class="nav-link" href="<?php echo get_post_type_archive_link('timetable'); ?>"><?php echo awm_tr('Timetables'); ?></a>
           </li>
           <li class="nav-item">
           <?php 
             $about = get_page_by_path('about');
             if ($about) :
           ?>
-            <a class="nav-link" href="<?php echo $about->the_permalink; ?>">About</a>
+            <a class="nav-link" href="<?php echo $about->the_permalink; ?>"><?php echo awm_tr('About'); ?></a>
             <?php endif; ?>
           </li>
           <li class="nav-item">

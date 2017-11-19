@@ -14,7 +14,7 @@ get_header();
         if ('study_abroad' === get_query_var('post_type')) {
             ?>
             <div class="awm-block">
-                <h5 class="awm-title cat-title">Study Abroad</h5>
+                <h5 class="awm-title cat-title"><?php echo awm_tr('Study Abroad'); ?></h5>
             </div>
             <?php
             include "inc/study-abroad-search.php";
@@ -24,10 +24,13 @@ get_header();
             the_post();
             include "inc/a-list-item.php";
         }
-        } ?>
+        ?>
             <div class="pagin-wrapper">
                 <?php include 'inc/pagination.php'; ?>
             </div>
+        <?php } else {?>
+            <p><?php echo awm_tr('No Posts Found'); ?></p>
+        <?php } ?>
         </div>
         <div class="col-md-3 sidebar order-md-1">
             <?php include 'sidebar.php'; ?>

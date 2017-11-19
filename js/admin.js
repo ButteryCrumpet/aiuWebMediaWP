@@ -73,6 +73,16 @@
             )});
     });
 
+    $(document).ready(function() {
+        $(window).scroll(function() {
+            if ($(this).scrollTop() >= 50) {
+                $('#scrolltop').fadeIn(200);
+            } else {
+                $('#scrolltop').fadeOut(200); 
+            }
+        });
+    });
+
 
 })(jQuery);
 

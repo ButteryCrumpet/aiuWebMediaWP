@@ -1,6 +1,6 @@
 
 <div class="container">
-<div class="awm-title">Next Busses</div>
+<div class="awm-title"><?php echo awm_tr('Next Busses'); ?></div>
 
 <?php
 $times = get_next_bus();
@@ -25,7 +25,7 @@ foreach ($times as $time) {
         </div>
         <div class="bus-info col">
             <h6><?php echo $from; ?> &rArr; <?php echo $to; ?></h6>
-            <p><?php echo $departure; ?></p>
+            <p><?php echo add_colon_time($departure); ?></p>
         </div>
     </div>
         
@@ -33,6 +33,6 @@ foreach ($times as $time) {
 }
 ?>
 <div class="row awm-side-link">
-    <a href="<?php echo get_post_type_archive_link('timetable'); ?>">Timetables <span class="fa fa-angle-double-right" aria-hidden="true"></span></a> <!-- Timetable Page Link -->
+    <a href="<?php echo get_post_type_archive_link('timetable'); ?>"><?php echo awm_tr('Timetables'); ?> <span class="fa fa-angle-double-right" aria-hidden="true"></span></a> <!-- Timetable Page Link -->
 </div>
 </div>

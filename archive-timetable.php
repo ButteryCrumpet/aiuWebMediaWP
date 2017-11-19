@@ -5,7 +5,7 @@ get_header();
     <div class="row">
         <div class="col-md-9 order-md-2">
             <div class="awm-block">
-                <h5 class="awm-title cat-title">Timetables</h5>
+                <h5 class="awm-title cat-title"><?php echo awm_tr('Timetables'); ?></h5>
             </div>
             <?php 
         if (have_posts()) {

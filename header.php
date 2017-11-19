@@ -39,6 +39,11 @@
   <div class="collapse" id="menu-collapse">
     <?php include 'inc/mob-menu.php'; ?>
   </div>
+  <div id="scrolltop" class="d-md-none">
+  <a href="#awm-header" class="smooth-scroll">
+    <i class="fa fa-lg fa-arrow-up" aria-hidden="true"></i>
+  </a>
+  </div>
 </div>
 
 <body>

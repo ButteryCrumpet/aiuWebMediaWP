@@ -16,13 +16,6 @@ get_header();
             <?php echo get_the_title(); ?>
           </h3>
           <div class="awm-flex">
-          <div class="awm-social-buttons awm-flex">
-            <div class="fb-share-button" data-size="large" data-href="<?php echo get_the_permalink(); ?>" data-layout="button_count" data-size="small"
-              data-mobile-iframe="true">
-              <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a>
-            </div>
-            <a class="twitter-share-button" data-size="large" href="https://twitter.com/intent/tweet">Tweet</a>
-          </div>
           </div>
           <div class="detail-wrapper awm-flex">
             <div>
@@ -35,7 +28,14 @@ get_header();
               </p>
               <?php endif; ?>
             </div>
-            <div class="d-flex align-items-end">
+            <div class="">
+              <div class="awm-social-buttons awm-flex">
+                <div class="fb-share-button" data-size="large" data-href="<?php echo get_the_permalink(); ?>" data-layout="button_count" data-size="small"
+                  data-mobile-iframe="true">
+                <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a>
+              </div>
+              <a class="twitter-share-button" data-size="large" href="https://twitter.com/intent/tweet">Tweet</a>
+            </div>
               <p><i class="fa fa-calendar" aria-hidden="true"></i>
                 <?php echo get_the_date(); ?>
               </p>

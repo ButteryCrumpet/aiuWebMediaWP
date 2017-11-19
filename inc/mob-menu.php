@@ -31,7 +31,7 @@ foreach ($cats as $cat) {
     }  
     ?>
     <p class="list-group-item list-group-item-action">
-        <a href="/?post_type=study_abroad" >Study Abroad</a>
+        <a href="/?post_type=study_abroad" ><?php echo awm_tr('Study Abroad'); ?></a>
     </p>
     <?php 
     $otherID = (get_current_blog_id() === 2) ? 3 : 2; 

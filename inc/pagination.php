@@ -16,7 +16,7 @@ $url = implode( '/', $url );
 <ul class="awm-pagin">
 	<p>
 		<?php if ( $page > 5 || $page === $num_pages ) : ?>
-			<a href="<?php echo esc_html( $url.'/0' ); ?>" >最初</a>
+			<a href="<?php echo esc_html( $url.'/0' ); ?>" ><?php echo awm_tr('First'); ?></a>
 			<span>...</span>
 		<?php endif; ?>
 		<?php
@@ -39,7 +39,7 @@ $url = implode( '/', $url );
 		?>
 		<?php if ( $num_pages > 5 ) : ?>
 			<span>...</span>
-			<a href="<?php echo esc_html( $url ) . '/' . esc_html( $num_pages ); ?>">最後</a>
+			<a href="<?php echo esc_html( $url ) . '/' . esc_html( $num_pages ); ?>"><?php echo awm_tr('Last'); ?></a>
 		<?php endif; ?>
 	</p>
 </ul>
