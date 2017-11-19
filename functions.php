@@ -25,7 +25,7 @@ function akiWebMedia_admin_style_scripts() {
 	
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', false );
 	wp_enqueue_script('adminJS', get_template_directory_uri() . '/js/admin.js');
-	//wp_enqueue_style( 'core', get_stylesheet_directory_uri() . '/awm-admin.css', false );
+	wp_enqueue_style( 'core', get_stylesheet_directory_uri() . '/awm-admin.css', false );
 	wp_enqueue_script('vueMani', get_template_directory_uri() . '/js/awmv/manifest.f160a0c8475225e8a6d8.js', array(), null, true);
 	wp_enqueue_script('vueVend', get_template_directory_uri() . '/js/awmv/vendor.c8b39cfc5e84eec96310.js', array(), null, true);
 	wp_enqueue_script('vueApp', get_template_directory_uri() . '/js/awmv/app.1cab2e80af2b09f2e5cb.js', array(), null, true);

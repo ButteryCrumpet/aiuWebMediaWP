@@ -1,11 +1,11 @@
 <?php
 
 function remove_studyabroad_metaboxes() {
-	remove_meta_box('locationdiv', 'study_abroad', 'normal');
+	//remove_meta_box('locationdiv', 'study_abroad', 'normal');
 }
 
 function add_studyabroad_metaboxes() {
-    add_meta_box('location-div', 'Locations', 'render_location_select', 'study_abroad', 'side', 'high');
+    //add_meta_box('location-div', 'Locations', 'render_location_select', 'study_abroad', 'side', 'high');
 }
 
 //refactor jesus fucking christ
@@ -44,7 +44,7 @@ function render_location_select( $post ) {
             $start2 = $term->term_id;
         }
     }
-    $initLevel3 = isset($parentChildren[$start2]) ? isset($parentChildren[$start2]) : '' ;
+    $initLevel3 = isset($parentChildren[$start2]) ? isset($parentChildren[$start2]) : [] ;
     $jsonLevels = json_encode($parentChildren);
  
 	//Name of the form
@@ -83,6 +83,7 @@ function render_location_select( $post ) {
 }
 
 function render_cat_option($tax, $terms, $current) {
+    var_dump($terms);
     foreach($terms as $term) {
         $id = $tax.'-'.$term->term_id;
         if (in_array($term->term_id, $current)) {
