@@ -12,6 +12,9 @@ get_header();
           <div class="cat-wrapper">
             <?php render_terms_list(get_the_ID()); ?>
           </div>
+          <div class="tag-wrapper">
+            <?php render_tags_list(get_the_ID()); ?>
+          </div>
           <h3 class="article-title">
             <?php echo get_the_title(); ?>
           </h3>
@@ -47,7 +50,6 @@ get_header();
           <p>
             <?php the_content(); ?>
           </p>
-          <?php render_tags_list(get_the_ID()); ?>
         </div>
         <div class="fb-comments" data-href="<?php echo get_the_permalink(); ?>" data-numposts="5"></div>
       </div>

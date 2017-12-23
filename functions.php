@@ -101,7 +101,7 @@ function render_tags_list($post_id) {
 
 	$html = '';
 	foreach($tags as $tag) {
-		$html .= '<a href="'. get_tag_link($tag->term_id) .'" class="badge badge-success" >' . $tag->name .'</a>';
+		$html .= '<a href="'. get_tag_link($tag->term_id) .'" class="badge badge-success terms-list" >' . $tag->name .'</a>';
 	}
 
 	echo $html;
