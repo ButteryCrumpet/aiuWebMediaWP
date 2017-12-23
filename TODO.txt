@@ -1,23 +1,5 @@
 
-
-Website:http://djc.ifa.mybluehost.me
-Admin:http://djc.ifa.mybluehost.me/wp-admin
-Username:crumpetybumpety
-Password:B7CDE5AF0u8x9slj3z6c1r4gb2
-
-read more link on a-list-item <<<< DONE
-smooth scroll to bus times <<<< DONE
-switch language menu <<<< DONE
-top page language select -> like template <<<< DONE
-set up banner/logo pics <<<< DONE
-translate -> options for all words <<<< DONE
-scroll to top for mobile <<<< DONE
 inc/postThumb -> image background author / date locked to bottom (flex column space between)
 clean up a lot
-sort out 404s
 
-bus time data -> turn this into an API Service !
-
-AuthType Basic
-AuthName "My Protected Area"
-Require valid-user
+correct meta og:** tags for main - cats - posts

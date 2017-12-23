@@ -117,6 +117,10 @@ a:hover {
     padding: 5px;
 }
 
+.detail-sect {
+    max-width: 50%;
+}
+
 .menu-icon {
     cursor: pointer;
 }
@@ -202,6 +206,10 @@ a:hover {
 .a-list-content {
     border-bottom: 1px solid grey;
     padding-bottom: 15px;
+}
+
+.a-list-content > p > a {
+    color: #0056b3;
 }
 
 .a-list-content > p {

@@ -2,7 +2,9 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="Akita Web Media: Information and events around Akita Int. University and Akita Prefecture">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title><?php echo bloginfo('name'); ?><?php echo wp_title(); ?></title>
+  <meta name="description" content="AIU Anex: <?php echo bloginfo('description'); ?>">
   <meta charset="<?php bloginfo( 'charset' ); ?>">
   <meta property="fb:app_id" content="1159304874214007" />
   <meta property="og:url" content="<?php echo get_the_permalink(); ?>" />
@@ -49,16 +51,23 @@
 <body>
   <div id="fb-root"></div>
   <script>
-    (function (d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s);
-      js.id = id;
-      //js.async = true;
-      js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.11&appId=1159304874214007';
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-  </script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1159304874214007',
+      xfbml      : true,
+      version    : 'v2.11'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
   <script>
     window.twttr = (function (d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0],
@@ -66,7 +75,7 @@
       if (d.getElementById(id)) return t;
       js = d.createElement(s);
       js.id = id;
-      //js.async = true;
+      js.async = true;
       js.src = "https://platform.twitter.com/widgets.js";
       fjs.parentNode.insertBefore(js, fjs);
 

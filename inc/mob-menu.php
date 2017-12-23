@@ -10,6 +10,7 @@ foreach ($cats as $cat) {
         'orderby' => 'name',
         'parent' => $cat->term_id,
     ));
+    $hasChildren = ! empty($childs);
     $link = get_category_link( $cat->term_id );
     ?>
     <li class="container list-group-item list-group-item-action" >
@@ -17,7 +18,9 @@ foreach ($cats as $cat) {
             <div class="col-10">
             <a href="<?php echo $link; ?>"><?php echo $cat->name; ?></a>
             </div>
-            <span style="cursor: pointer;" data-toggle="collapse" href="#<?php echo $prefix . '-collapse-' . $cat->term_id; ?>" class="collapsed fa fa-angle-double-down  fa-lg menu-icon"></span>
+            <?php if ($hasChildren) : ?>
+            <span style="cursor: pointer;" data-toggle="collapse" href="#<?php echo $prefix . '-collapse-' . $cat->term_id; ?>" class="collapsed fa fa-angle-double-down fa-lg menu-icon"></span>
+            <?php endif; ?>
         </div>
     </li>
     <li class='collapse' id="<?php echo $prefix . '-collapse-' . $cat->term_id; ?>">

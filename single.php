@@ -18,29 +18,32 @@ get_header();
           <div class="awm-flex">
           </div>
           <div class="detail-wrapper awm-flex">
-            <div>
-              <p><i class="fa fa-pencil" aria-hidden="true"></i>
+            <div class="detail-sect">
+              <p>
+                <i class="fa fa-pencil" aria-hidden="true"></i>
                 <?php echo get_field('author'); ?>
               </p>
               <?php if (get_field('photographer')) : ?>
-              <p><i class="fa fa-camera-retro" aria-hidden="true"></i>
+              <p>
+                <i class="fa fa-camera-retro" aria-hidden="true"></i>
                 <?php echo get_field('photographer'); ?>
               </p>
               <?php endif; ?>
             </div>
-            <div class="">
-              <div class="awm-social-buttons awm-flex">
-                <div class="fb-share-button" data-size="large" data-href="<?php echo get_the_permalink(); ?>" data-layout="button_count" data-size="small"
-                  data-mobile-iframe="true">
-                <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a>
-              </div>
-              <a class="twitter-share-button" data-size="large" href="https://twitter.com/intent/tweet">Tweet</a>
-            </div>
-              <p><i class="fa fa-calendar" aria-hidden="true"></i>
+            <div class="detail-sect">
+              <p>
+                <i class="fa fa-calendar" aria-hidden="true"></i>
                 <?php echo get_the_date(); ?>
               </p>
             </div>
           </div>
+          <div class="awm-social-buttons d-flex align-items-center justify-content-around">
+                <div class="fb-share-button" data-size="large" data-href="<?php echo get_the_permalink(); ?>" data-layout="button_count"
+                  data-size="small" data-mobile-iframe="true">
+                  <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a>
+                </div>
+                <a class="twitter-share-button" data-size="large" href="https://twitter.com/intent/tweet">Tweet</a>
+              </div>
           <p>
             <?php the_content(); ?>
           </p>

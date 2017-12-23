@@ -14,6 +14,7 @@ foreach ($cats as $cat) {
         'orderby' => 'name',
         'parent' => $cat->term_id,
     ));
+    $hasChildren = ! empty($childs);
     $link = get_category_link( $cat->term_id );
     ?>
     <li style="border-color: <?php //echo get_field('color', $cat); ?>;" class="container list-group-item list-group-item-action ribbon-left" >
@@ -21,7 +22,9 @@ foreach ($cats as $cat) {
             <div class="col-10">
             <a href="<?php echo $link; ?>"><?php echo $cat->name; ?></a>
             </div>
+            <?php if ($hasChildren) : ?>
             <span style="cursor: pointer;" data-toggle="collapse" href="#<?php echo $prefix . '-collapse-' . $cat->term_id; ?>" class="collapsed fa fa-angle-double-down fa-lg menu-icon"></span>
+            <?php endif; ?>
         </div>
     </li>
     <li class='collapse' id="<?php echo $prefix . '-collapse-' . $cat->term_id; ?>">
@@ -32,14 +35,16 @@ foreach ($cats as $cat) {
     <?php } ?>
     </li>
     <?php
-    }  
+    } 
+    if (get_current_blog_id() === 3) { 
     ?>
     <p class="list-group-item list-group-item-action">
         <a href="<?php echo get_post_type_archive_link('study_abroad'); ?>" >
             <?php echo awm_tr('Study Abroad'); ?>
         </a>
     </p>
-    <?php 
+    <?php
+    }
     $otherID = (get_current_blog_id() === 2) ? 3 : 2; 
     $otherlang = ($otherID == 3) ? 'Japanese Site' : '英語のサイト'; 
     ?>
