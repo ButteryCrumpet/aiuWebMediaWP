@@ -143,7 +143,7 @@ function get_next_bus_from_ttable($id, $now, $day_types) {
 			$hm_time = $time['departure'];
 			if ($hm_time > $now) {
 				$diff = $hm_time - $now;
-				if($diff < $best_time_diff) {
+				if ($diff < $best_time_diff) {
 					$best_time_diff = $diff;
 					$best_time = $hm_time;
 				}
@@ -182,7 +182,7 @@ function get_day_types() {
 	$special_day = false;
 	while ($query->have_posts()) {
 		$query->the_post();
-		$date_ranges = get_post_meta(get_the_ID(), 'formated_dates', true);
+		$date_ranges = get_post_meta(get_the_ID(), 'raw_dates', true);
 		foreach ($date_ranges as $range) {
 			$start = $range['start']['month'] . $range['start']['day'];
 			$end = $range['end']['month'] . $range['end']['day'];
