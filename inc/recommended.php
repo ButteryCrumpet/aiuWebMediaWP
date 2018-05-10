@@ -1,7 +1,7 @@
 <?php
  
 $args = array(
-    'numberposts' => 3,
+    'posts_per_page' => 3,
     'post_type' => array('post', 'study_abroad'),
     'meta_key' => 'recommended',
     'meta_value' => true,
@@ -24,7 +24,7 @@ if ( $query->have_posts() ) {
         
         ?>
         <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-            <div class="awm-recommended" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)),url('<?php echo get_the_post_thumbnail_url(); ?>')">    
+            <div class="awm-recommended" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)),url('<?php echo get_the_post_thumbnail_url(null, 'thumbnail'); ?>')">    
                 <h5 title="<?php the_title_attribute(); ?>">
                     <?php echo trim_length(get_the_title()); ?>
                 </h5>

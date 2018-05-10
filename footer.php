@@ -28,7 +28,7 @@
       </div>
 
       <div class="col-12 col-md-4 mt-4 mt-md-0 text-center text-md-right">
-        &copy; 2017 AWM. All Rights Reserved
+        &copy; 2018 Akita Web Media. All Rights Reserved
       </div>
     </div>
   </div>

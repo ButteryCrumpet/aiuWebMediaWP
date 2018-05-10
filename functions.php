@@ -9,7 +9,7 @@ include 'functions/customize.php';
 
 //styles
 function akiWebMedia_style_scripts() {
-	wp_enqueue_style( 'core', get_stylesheet_uri(), false );
+	wp_enqueue_style( 'core', get_stylesheet_uri(), false, "1.13" );
 	wp_enqueue_style( 'froala', get_template_directory_uri() . '/css/froala_blocks.css', false );
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', false );
 	wp_enqueue_style( 'iconic', get_template_directory_uri() . '/css/open-iconic-bootstrap.css', false );
@@ -90,7 +90,8 @@ function render_terms_list($post_id) {
 	$all = $cats + $terms;
 	$html = '';
 	foreach($all as $term) {
-		$html .= '<a style="background-color:' . get_field('color', $term) . ';" href="'. get_term_link($term->term_id) .'" class="badge terms-list" >' . $term->name .'</a>';
+		$color = get_field('color', $term) ? get_field('color', $term) : "#0062CC";
+		$html .= '<a style="background-color:' . $color . ';" href="'. get_term_link($term->term_id) .'" class="badge terms-list" >' . $term->name .'</a>';
 	}
 
 	echo $html;

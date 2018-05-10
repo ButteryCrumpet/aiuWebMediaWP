@@ -7,16 +7,16 @@
                 </a>
             </div>
             <div class="col-12 col-md-8 ml-auto">
-                <h3 class="awm-title">
+                <h4 class="awm-title">
                     <a href="<?php echo get_the_permalink(); ?>">
                         <?php echo get_the_title(); ?>
                     </a>
-                </h3>
+                </h4>
                 <p>
                     <?php render_terms_list(get_the_ID()); ?>
                 </p>
                 <p class="text-h3">
-                    <?php echo trim_length(get_the_excerpt(), 150); ?>
+                    <?php echo trim_length(get_the_excerpt(), 100); ?>
                 </p>
                 <div class="awm-read-more">
                     <a href="<?php echo get_the_permalink(); ?>"><?php echo awm_tr('Read More'); ?> <span class="fa fa-angle-double-right" aria-hidden="true"></span></a>
