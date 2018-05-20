@@ -46,7 +46,7 @@ foreach ($cats as $cat) {
     <?php
     }
     $otherID = (get_current_blog_id() === 2) ? 3 : 2; 
-    $otherlang = ($otherID == 3) ? 'Japanese Site' : '英語のサイト'; 
+    $otherlang = ($otherID == 3) ? '日本語のサイト' : 'English Site'; 
     ?>
     <p class="list-group-item list-group-item-action">
         <i class="fa fa-globe" ></i>
