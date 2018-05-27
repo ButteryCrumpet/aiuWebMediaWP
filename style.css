@@ -222,6 +222,10 @@ a:hover {
 
 .a-list-content > p > a {
     color: #0056b3;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    word-break: break-word;
 }
 
 .a-list-content > p {
