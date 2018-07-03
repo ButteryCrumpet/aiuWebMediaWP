@@ -28,7 +28,7 @@
 </header>
 <div class="d-md-none awm-mobmenu-wrapper">
   <nav class="awm-mobile-menu">
-    <a href="<?php echo get_home_url(); ?>" >
+    <a href="<?php echo "http://aiu-anex.net"//get_home_url(); ?>" >
       <i class="fa fa-lg fa-home" aria-hidden="true"></i>
     </a>
     <a data-toggle="collapse" href="#menu-collapse">

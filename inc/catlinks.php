@@ -1,7 +1,7 @@
 <ul class="list-group">
     <p class="list-group-item list-group-item-action">
         <i class="fa fa-home" aria-hidden="true"></i>
-        <a href="<?php echo get_home_url(); ?>" ><?php echo awm_tr('Home'); ?></a>
+        <a href="<?php echo "http://aiu-anex.net" //get_home_url(); ?>" ><?php echo awm_tr('Home'); ?></a>
     </p>
 <?php 
 $cats = get_categories(array(
